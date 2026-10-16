@@ -1,0 +1,25 @@
+Title: Support Vector Machines
+
+Support Vector Machines (SVMs) are supervised learning algorithms used
+for classification and regression.
+
+A support vector classifier tries to find a decision boundary that
+separates classes while maximizing the margin between them.
+
+Support vectors are the training observations closest to the decision
+boundary. They help determine the position of the boundary.
+
+A linear kernel is useful when a linear decision boundary is appropriate.
+Nonlinear kernels, such as the radial basis function (RBF) kernel,
+can model more complex decision boundaries.
+
+The parameter C controls the trade-off between margin width and
+training errors. A smaller C allows more violations of the margin,
+while a larger C penalizes training errors more strongly.
+
+SVMs can be sensitive to feature scales. Standardization is often
+important, and the scaler should be fitted only on training data.
+
+SVM models can be evaluated using suitable metrics such as accuracy,
+precision, recall, F1-score, and confusion matrices for classification.
+For regression, metrics such as MAE and RMSE may be appropriate.

@@ -1,0 +1,23 @@
+Title: Regression for Scientific and Engineering Problems
+
+Regression is a supervised machine learning approach used to predict
+continuous numerical values from input features.
+
+Linear regression models a relationship between an input variable and
+a numerical target using a linear equation.
+
+Multiple linear regression uses two or more input features to predict
+a continuous target.
+
+Polynomial regression adds polynomial terms to model curved relationships.
+A high-degree polynomial can overfit the training data.
+
+Examples of regression include predicting temperature, estimating
+energy consumption, modelling pressure changes, and predicting house prices.
+
+A regression model should be evaluated using data that was not used
+for training. Common metrics include mean absolute error (MAE), mean
+squared error (MSE), root mean squared error (RMSE), and R-squared.
+
+The appropriate regression method depends on the data, the relationship
+between variables, the prediction objective, and the evaluation results.

@@ -1,0 +1,22 @@
+Title: Scientific and Engineering Computational Workflows
+
+A scientific workflow is a sequence of computational steps used to
+investigate a scientific or engineering question.
+
+A typical workflow includes understanding the problem, collecting
+data, validating and preprocessing data, selecting a method, configuring
+an experiment, executing the computation, evaluating the results,
+and documenting the findings.
+
+The choice of an algorithm depends on the scientific objective,
+available data, data quality, assumptions, computational resources,
+and evaluation criteria.
+
+Reproducible workflows should record input data, preprocessing steps,
+algorithm choices, parameter settings, software dependencies, and results.
+
+Experiments should be evaluated before conclusions are drawn.
+Generated code should be reviewed and tested before it is executed.
+
+A workflow recommendation is a proposal. It should not be described
+as an executed experiment unless the experiment has actually run.
