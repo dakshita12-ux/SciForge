@@ -1,5 +1,0 @@
-Title: Neural Networks
-
-A neural network is a machine learning model made of interconnected
-artificial neurons. Neural networks can learn patterns from data.
-They are used in image recognition, forecasting, and many other tasks.
