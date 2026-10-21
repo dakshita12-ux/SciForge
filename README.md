@@ -88,3 +88,43 @@ SciForge is a developing AI-powered system designed to help users translate scie
 ## Development Status
 
 SciForge is under active development. Its current RAG implementation retrieves text passages from a local knowledge base and supplies them as context to an LLM. It does not yet support automatic PDF ingestion, multi-agent orchestration, or automated experiment execution.
+
+## Stage 4 — Intelligent Research Planning
+
+Stage 4 introduces a research planning engine that transforms natural-language scientific and engineering problems into structured research plans.
+
+### Features
+
+- Retrieves relevant information from the existing FAISS-based RAG pipeline.
+- Uses Groq with `openai/gpt-oss-120b` to analyze the problem.
+- Identifies objectives, task types, inputs, outputs, assumptions, and missing information.
+- Recommends approaches, evaluation metrics, implementation steps, and potential risks.
+- Generates structured JSON output for future frontend integration.
+- Attaches metadata for the documents retrieved by the knowledge retrieval system.
+- Handles invalid requests, missing API keys, and model-response parsing errors.
+
+### API Endpoint
+
+`POST /plan`
+
+Example request:
+
+```json
+{
+  "problem": "Predict house prices using machine learning and recommend suitable algorithms and evaluation metrics."
+}
+```
+
+### Testing
+
+Start the development server:
+
+```bash
+python -m uvicorn backend.main:app --reload
+```
+
+Open `http://127.0.0.1:8000/docs` to test the endpoint.
+
+### Limitations
+
+The generated research plans are suggestions and require review. Stage 4 does not automatically execute experiments, train models, browse the web, or verify every generated claim against source documents.

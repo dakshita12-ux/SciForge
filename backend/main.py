@@ -5,6 +5,15 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from groq import Groq, APIError, AuthenticationError, RateLimitError
+from backend.planner import create_research_plan
+
+class PlanRequest(BaseModel):
+    problem: str = Field(
+        ...,
+        min_length=5,
+        max_length=5000,
+        description="Scientific or engineering problem to plan",
+    )
 
 from backend.rag import (
     INDEX_PATH,
@@ -256,3 +265,33 @@ def ask(data: Question):
             status_code=502,
             detail="The Groq API request failed. Check the model and try again.",
         )
+
+@app.post("/plan")
+def plan_endpoint(request : PlanRequest):
+    try:
+        result = create_research_plan(request.problem)
+        return result
+
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=400,
+            detail=str(exc),
+        ) from exc
+
+    except RuntimeError as exc:
+        raise HTTPException(
+            status_code=503,
+            detail=str(exc),
+        ) from exc 
+
+    except Exception as exc:
+        print(f"Stage 4 planning error: {exc}")
+
+        raise HTTPException(
+            status_code=502,
+            detail=(
+                "SciForge could not generate the research plan. "
+                "Check the backend terminal and try again. "
+            ),
+        ) from exc
+    
